@@ -21,7 +21,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return redirect()->route('user.index');
+    return redirect()->route('disease-type.index');
 });
 
 Route::get('users', [UserController::class, 'index'])->name('user.index');
@@ -29,33 +29,33 @@ Route::get('users/{email}', [UserController::class, 'edit'])->name('user.edit');
 Route::post('users/save', [UserController::class, 'save'])->name('user.save');
 Route::post('users/delete', [UserController::class, 'delete'])->name('user.delete');
 
-Route::get('disease_types', [DiseaseTypeController::class, 'index'])->name('disease-type.index');
-Route::get('disease_types/{id}', [DiseaseTypeController::class, 'edit'])->name('disease_types.edit');
-Route::post('disease_types/save', [DiseaseTypeController::class, 'save'])->name('disease_types.save');
-Route::post('disease_types/delete', [DiseaseTypeController::class, 'delete'])->name('disease_types.delete');
+Route::get('dtypes', [DiseaseTypeController::class, 'index'])->name('disease-type.index');
+Route::get('dtypes/{id}', [DiseaseTypeController::class, 'edit'])->name('disease_types.edit');
+Route::post('dtypes/save', [DiseaseTypeController::class, 'save'])->name('disease_types.save');
+Route::post('dtypes/delete', [DiseaseTypeController::class, 'delete'])->name('disease_types.delete');
 
-Route::get('countries', [CountryController::class, 'index'])->name('countries.index');
-Route::get('countries/{cname}', [CountryController::class, 'edit'])->name('countries.edit');
-Route::post('countries/save', [CountryController::class, 'save'])->name('countries.save');
-Route::post('countries/delete', [CountryController::class, 'delete'])->name('countries.delete');
+Route::get('strany', [CountryController::class, 'index'])->name('countries.index');
+Route::get('strany/{cname}', [CountryController::class, 'edit'])->name('countries.edit');
+Route::post('strany/save', [CountryController::class, 'save'])->name('countries.save');
+Route::post('strany/delete', [CountryController::class, 'delete'])->name('countries.delete');
 
-Route::get('diseases', [DiseaseController::class, 'index'])->name('diseases.index');
-Route::get('diseases/{disease_code}', [DiseaseController::class, 'edit'])->name('diseases.edit');
-Route::post('diseases/save', [DiseaseController::class, 'save'])->name('diseases.save');
-Route::post('diseases/delete', [DiseaseController::class, 'delete'])->name('diseases.delete');
+Route::get('dis', [DiseaseController::class, 'index'])->name('diseases.index');
+Route::get('dis/{disease_code}', [DiseaseController::class, 'edit'])->name('diseases.edit');
+Route::post('dis/save', [DiseaseController::class, 'save'])->name('diseases.save');
+Route::post('dis/delete', [DiseaseController::class, 'delete'])->name('diseases.delete');
 
-Route::get('discoveries', [DiscoverController::class, 'index'])->name('discoveries.index');
-Route::get('discoveries/{cname}', [DiscoverController::class, 'edit'])->name('discoveries.edit');
-Route::post('discoveries/save', [DiscoverController::class, 'save'])->name('discoveries.save');
-Route::post('discoveries/delete', [DiscoverController::class, 'delete'])->name('discoveries.delete');
+Route::get('discover', [DiscoverController::class, 'index'])->name('discoveries.index');
+Route::get('discover/{cname}', [DiscoverController::class, 'edit'])->name('discoveries.edit');
+Route::post('discover/save', [DiscoverController::class, 'save'])->name('discoveries.save');
+Route::post('discover/delete', [DiscoverController::class, 'delete'])->name('discoveries.delete');
 
 
-Route::get('public_servants', [PublicServantController::class, 'index'])->name('public_servants.index');
-Route::get('public_servants/{email}', [PublicServantController::class, 'edit'])->name('public_servants.edit');
-Route::post('public_servants/save', [PublicServantController::class, 'save'])->name('public_servants.save');
-Route::post('public_servants/delete', [PublicServantController::class, 'delete'])->name('public_servants.delete');
+Route::get('pservs', [PublicServantController::class, 'index'])->name('public_servants.index');
+Route::get('pservs/{email}', [PublicServantController::class, 'edit'])->name('public_servants.edit');
+Route::post('pservs/save', [PublicServantController::class, 'save'])->name('public_servants.save');
+Route::post('pservs/delete', [PublicServantController::class, 'delete'])->name('public_servants.delete');
 
-Route::get('doctors', [DoctorController::class, 'index'])->name('doctors.index');
-Route::get('doctors/{email}', [DoctorController::class, 'edit'])->name('doctors.edit');
-Route::post('doctors/save', [DoctorController::class, 'save'])->name('doctors.save');
-Route::post('doctors/delete', [DoctorController::class, 'delete'])->name('doctors.delete');
+Route::get('docs', [DoctorController::class, 'index'])->name('doctors.index');
+Route::get('docs/{email}', [DoctorController::class, 'edit'])->name('doctors.edit');
+Route::post('docs/save', [DoctorController::class, 'save'])->name('doctors.save');
+Route::post('docs/delete', [DoctorController::class, 'delete'])->name('doctors.delete');

@@ -21,10 +21,10 @@ class DiseaseController extends Controller
             ->keyBy('id');
 
         return view('diseases.index', [
-            'diseases' => $diseases->paginate(10),
+            'diseases' => $diseases->paginate(15),
             'types' => $disease_types,
             'firstPage' => 1,
-            'lastPage' => ceil($count/10)
+            'lastPage' => ceil($count/15)
         ]);
     }
 

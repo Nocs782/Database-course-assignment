@@ -2,9 +2,23 @@
     <div class="d-flex justify-content-center" >
         <div class="card col-6">
             <div class="card-body">
-                <h5 class="card-title">User Edit Form</h5>
+                <h5 class="mt-3">User</h5>
+                <hr>
                 <form method="POST" action="{{ route('user.save') }}" class="row g-3">
                     @csrf
+                    <div class="col-12">
+                        <label for="cname" class="form-label">Country Name</label>
+                        <select id="cname" name="cname" class="form-select form-control @error('cname') is-invalid @enderror">
+                            @foreach($countries as $country)
+                                <option value="{{ $country->cname }}" {{ $user->cname == $country->cname ? 'selected="' : '' }}>
+                                    {{ $country->cname }}
+                                </option>
+                            @endforeach
+                        </select>
+                        @error('cname')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
+                    </div>
                     @if(!$new)
                         <input type="hidden" value="{{ $user->email }}" name="email">
                     @endif
@@ -18,17 +32,17 @@
                         @enderror
                     </div>
                     <div class="col-12">
-                        <label for="name" class="form-label">Name</label>
-                        <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" id="name" value="{{ $user?->name }}">
-                        @error('name')
-                        <div class="invalid-feedback">{{ $errors->first('name') }}</div>
-                        @enderror
-                    </div>
-                    <div class="col-12">
                         <label for="surname" class="form-label">Surname</label>
                         <input type="text" class="form-control @error('surname') is-invalid @enderror" name="surname" id="surname" value="{{ $user?->surname }}">
                         @error('surname')
                         <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
+                    </div>
+                    <div class="col-12">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" id="name" value="{{ $user?->name }}">
+                        @error('name')
+                        <div class="invalid-feedback">{{ $errors->first('name') }}</div>
                         @enderror
                     </div>
                     <div class="col-12">
@@ -45,22 +59,8 @@
                         <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
                     </div>
-                    <div class="col-12">
-                        <label for="cname" class="form-label">Country Name</label>
-                        <select id="cname" name="cname" class="form-select form-control @error('cname') is-invalid @enderror">
-                            @foreach($countries as $country)
-                                <option value="{{ $country->cname }}" {{ $user->cname == $country->cname ? 'selected="' : '' }}>
-                                    {{ $country->cname }}
-                                </option>
-                            @endforeach
-                        </select>
-                        @error('cname')
-                        <div class="invalid-feedback">{{ $message }}</div>
-                        @enderror
-                    </div>
-                    <div class="text-center">
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                        <button type="reset" class="btn btn-secondary">Reset</button>
+                    <div class="text-center d-flex justify-content-end">
+                        <button type="submit" class="btn btn-success">Apply</button>
                     </div>
                 </form>
             </div>

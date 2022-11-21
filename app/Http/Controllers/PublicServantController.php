@@ -17,9 +17,9 @@ class PublicServantController extends Controller
             ->orderBy('email');
 
         return view('public_servants.index', [
-            'public_servants' => $pServants->paginate(10),
+            'public_servants' => $pServants->paginate(15),
             'firstPage' => 1,
-            'lastPage' => ceil($count/10)
+            'lastPage' => ceil($count/15)
         ]);
     }
 

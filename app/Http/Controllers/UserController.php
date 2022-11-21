@@ -17,9 +17,9 @@ class UserController extends Controller
             ->orderBy('email');
 
         return view('User.index', [
-            'users' => $users->paginate(10),
+            'users' => $users->paginate(15),
             'firstPage' => 1,
-            'lastPage' => ceil($count/10)
+            'lastPage' => ceil($count/15)
         ]);
     }
 

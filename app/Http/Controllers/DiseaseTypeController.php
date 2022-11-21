@@ -17,9 +17,9 @@ class DiseaseTypeController extends Controller
             ->where('id', '!=', 0)
             ->orderBy('id');
         return view('disease_type.index', [
-            'dTypes' => $dTypes->paginate(10),
+            'dTypes' => $dTypes->paginate(15),
             'firstPage' => 1,
-            'lastPage' => ceil($count/10)
+            'lastPage' => ceil($count/15)
         ]);
     }
 

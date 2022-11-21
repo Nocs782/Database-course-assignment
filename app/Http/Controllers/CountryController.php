@@ -16,9 +16,9 @@ class CountryController extends Controller
             ->where('cname', '!=', Country::DefaultValue)
             ->orderBy('cname');
         return view('country.index', [
-            'countries' => $countries->paginate(10),
+            'countries' => $countries->paginate(15),
             'firstPage' => 1,
-            'lastPage' => ceil($count/10)
+            'lastPage' => ceil($count/15)
         ]);
     }
 

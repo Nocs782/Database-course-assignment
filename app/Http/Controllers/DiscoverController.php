@@ -17,9 +17,9 @@ class DiscoverController extends Controller
         $discoveries = Discover::query()
             ->orderBy('cname');
         return view('discoveries.index', [
-            'discoveries' => $discoveries->paginate(10),
+            'discoveries' => $discoveries->paginate(15),
             'firstPage' => 1,
-            'lastPage' => ceil($count/10)
+            'lastPage' => ceil($count/15)
         ]);
     }
 

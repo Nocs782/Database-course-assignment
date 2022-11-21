@@ -2,7 +2,8 @@
     <div class="d-flex justify-content-center" >
         <div class="card col-6">
             <div class="card-body">
-                <h5 class="card-title">Public Servant Edit Form</h5>
+                <h5 class="mt-3">Public Servant</h5>
+                <hr>
                 <form method="POST" action="{{ route('public_servants.save') }}" class="row g-3">
                     @csrf
                     @if(!$new)
@@ -30,9 +31,8 @@
                         <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
                     </div>
-                    <div class="text-center">
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                        <button type="reset" class="btn btn-secondary">Reset</button>
+                    <div class="text-center d-flex justify-content-end">
+                        <button type="submit" class="btn btn-success">Apply</button>
                     </div>
                 </form>
             </div>
