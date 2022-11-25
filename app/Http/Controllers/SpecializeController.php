@@ -24,11 +24,11 @@ class SpecializeController extends Controller
             ->get()->keyBy('email');
 
         return view('specializations.index', [
-            'specs' => $specs->paginate(10),
+            'specs' => $specs->paginate(15),
             'dTypes' => $dTypes,
             'users' => $users,
             'firstPage' => 1,
-            'lastPage' => ceil($count/10)
+            'lastPage' => ceil($count/15)
         ]);
     }
 
