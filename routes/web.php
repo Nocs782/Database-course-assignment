@@ -6,6 +6,8 @@ use App\Http\Controllers\DiseaseController;
 use App\Http\Controllers\DiseaseTypeController;
 use App\Http\Controllers\DoctorController;
 use App\Http\Controllers\PublicServantController;
+use App\Http\Controllers\RecordController;
+use App\Http\Controllers\SpecializeController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -59,3 +61,14 @@ Route::get('docs', [DoctorController::class, 'index'])->name('doctors.index');
 Route::get('docs/{email}', [DoctorController::class, 'edit'])->name('doctors.edit');
 Route::post('docs/save', [DoctorController::class, 'save'])->name('doctors.save');
 Route::post('docs/delete', [DoctorController::class, 'delete'])->name('doctors.delete');
+
+
+Route::get('recs', [RecordController::class, 'index'])->name('records.index');
+Route::get('recs/{email}', [RecordController::class, 'edit'])->name('records.edit');
+Route::post('recs/save', [RecordController::class, 'save'])->name('records.save');
+Route::post('recs/delete', [RecordController::class, 'delete'])->name('records.delete');
+
+Route::get('specs', [SpecializeController::class, 'index'])->name('specializations.index');
+Route::get('specs/{email}', [SpecializeController::class, 'edit'])->name('specializations.edit');
+Route::post('specs/save', [SpecializeController::class, 'save'])->name('specializations.save');
+Route::post('specs/delete', [SpecializeController::class, 'delete'])->name('specializations.delete');
