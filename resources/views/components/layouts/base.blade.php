@@ -50,10 +50,10 @@
                         <a class="nav-link" href="{{ route('doctors.index') }}">Doctor</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('discoveries.index') }}">Record</a>
+                        <a class="nav-link" href="{{ route('records.index') }}">Record</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('discoveries.index') }}">Specialize</a>
+                        <a class="nav-link" href="{{ route('specializations.index') }}">Specialize</a>
                     </li>
                 </ul>
             </div>
